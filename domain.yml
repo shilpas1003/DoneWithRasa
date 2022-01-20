@@ -1,0 +1,58 @@
+version: '2.0'
+config:
+  store_entities_as_slots: true
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+intents:
+- bot_challenge:
+    use_entities: true
+- confirm:
+    use_entities: true
+- goodbye:
+    use_entities: true
+- greet:
+    use_entities: true
+- order_pizza:
+    use_entities: true
+- request_init:
+    use_entities: true
+- thanks:
+    use_entities: true
+entities:
+- pizza_size
+- pizza_type
+- pizza_amount
+slots:
+  pizza_size:
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: false
+  pizza_type:
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: false
+  pizza_amount:
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: false
+responses:
+  utter_greet:
+  - text: Hey!! How are you? How can i help you sir
+  utter_pizza_menu:
+  - text: Yes Sir, We Have Greek pizza, and New York-Style Pizza Available in all different sizes i.e small, medium, large.
+  utter_confirm:
+  - text: Sure!! We delivering your order ASAP!!!! Have a nice day :)
+  utter_goodbye:
+  - text: Welcome !! Enjoy your pizza
+  utter_iamabot:
+  - text: I am bot
+actions:
+- action_pizza_order_form
+forms:
+  pizza_order_form:
+    required_slots: {}
+e2e_actions: []

@@ -1,0 +1,55 @@
+version: "2.0"
+
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+    - hola
+    - hej
+
+# Pizza request
+- intent: request_init
+  examples: |
+    - I want to order a pizza
+    - I want pizza
+    - can you order a pizza for me
+    - pizza pls
+    - pizza
+
+# Pizza order
+- intent: order_pizza
+  examples: |
+    - I want [two](pizza_amount) [Small](pizza_size) [Greek](pizza_type) pizza
+    - I want [one](pizza_amount) [Greek](pizza_type) [small](pizza_size) pizza
+    - I want [New York-Style](pizza_type) pizza pls
+    - [2](pizza_amount) [large](pizza_size) [Greek](pizza_type) pizza
+    - Order [6](pizza_amount) [Greek](pizza_type) [large](pizza_size) pizzas
+
+# Confirm
+- intent: confirm
+  examples: |
+    - yes make this order
+    - yes pls
+    - please do it fast
+    - haha yes please!!!
+
+#Thanks
+- intent: thanks
+  examples: |
+    - thanks
+    - great, deliver it as soon as possible
+    - Thanks much
+    - thank you so much
+
